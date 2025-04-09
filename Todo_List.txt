@@ -1,0 +1,23 @@
+To-Do List of Tasks To Be Completed
+
+COMPLETED
+[DONE] Set Up IDE Enviroment 
+    [DONE]Install dependencies
+    [DONE]Create a .bat file that installs necessary libraries    
+[DONE]Build a functional User Interface
+[DONE] Create function that take user input and pre-processes it.
+
+TO-DO
+[IN PROGRESS] Polish User Interface
+[IN PROGRESS] Set Up Python Server
+    [IN PROGRESS] Create function that takes pre-processed input and runs it through the A.I Model.
+    [IN PROGRESS] Create function that returns Spotify's recommendation and displays it on User Interface.
+    [IN PROGRESS] Integrate Spotify's Web API for song reccomendation. Try to devise a method of recommending songs dynamically.
+[IN PROGRESS] Create script that submits user form async. so that the webpage is not reloaded when the user submits an entry.
+    [IN PROGRESS] Script must preprocess text, run it through the A.I Model, and return a reccomendation.
+
+TARGET
+    [DOING] Create function that takes pre-processed input and runs it through the A.I Model.
+        - Function should check that the input is valid. (Meaning it's preprocessed.)
+        - Take input, run it through A.I model, get song reccomendation
+        - Return the song reccomendation.
