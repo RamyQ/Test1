@@ -6,12 +6,12 @@ from SongRecommender import EmotionBasedRecommender
 import re
 from flask_cors import CORS  # To handle Cross-Origin Resource Sharing (CORS)
 
-app = Flask(__name__)
-CORS(app)
+server = Flask(__name__)
+CORS(server)
 
 limiter = Limiter(
     get_remote_address,
-    app=app,
+    server=server,
     default_limits=["1 per minute"],
     storage_uri="memory://",
 )
@@ -43,7 +43,7 @@ def song_recommendation(text, genre):
         print("Song Recommendation failed. Text input is not preprocessed.")
         return []  # Return an empty list instead of None
 
-@app.route('/process_input', methods=['POST'])
+@server.route('/process_input', methods=['POST'])
 @limiter.limit("1 per minute")  # Apply rate limit of 1 request per minute
 def process_input():
     try:
@@ -82,4 +82,4 @@ def process_input():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    server.run(debug=True, host='0.0.0.0', port=5000)
