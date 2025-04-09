@@ -17,7 +17,7 @@ audioread==3.0.1
 babel==2.17.0
 beautifulsoup4==4.12.3
 bertopic==0.16.4
-pywin32==306
+# pywin32==306
 pywinpty==2.0.15
 bleach==6.1.0
 blinker==1.9.0
