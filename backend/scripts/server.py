@@ -9,6 +9,14 @@ from flask_cors import CORS  # To handle Cross-Origin Resource Sharing (CORS)
 server = Flask(__name__)
 CORS(server)
 
+@server.route("/")
+def home():
+    return "Vercel"
+
+@server.route("/api"):
+def home():
+    return "Vercel here"
+
 limiter = Limiter(
     get_remote_address,
     server=server,
@@ -82,4 +90,4 @@ def process_input():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    server.run(debug=True, host='0.0.0.0', port=5000)
+    server.run()
